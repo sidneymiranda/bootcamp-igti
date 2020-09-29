@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1>Seletor de cores</h1>
+      </div>
+      <div class="label">
+        <h3>(R) - Vermelho</h3>
+        <h3>(G) - Verde</h3>
+        <h3>(B) - Azul</h3>
+      </div>
+      <div class="input-disabled">
+        <input type="text" name="red" disabled id="red" value="0" />
+        <input type="text" name="green" disabled id="green" value="0" />
+        <input type="text" name="blue" disabled id="blue" value="0" />
+      </div>
+      <div class="input-range">
+        <input type="range" name="r" id="r" value="0" min="0" max="255" />
+        <input type="range" name="g" id="g" value="0" min="0" max="255" />
+        <input type="range" name="b" id="b" value="0" min="0" max="255" />
+      </div>
+      <div id="colors"></div>
+      <script src="./js/scripts.js"></script>
+    </div>
+  </body>
+</html>
