@@ -3,24 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Desafio mod 1</title>
   </head>
   <body>
     <h1>Pesquisa de usuários</h1>
-    <form action="">
+
+    <form class="form">
+      <label for="input-search">Busca</label>
       <input
         type="text"
-        name="input-busca"
-        id="input-busca"
-        placeholder="Busca"
+        id="input-search"
+        style="text-transform: lowercase"
+        autofocus
       />
       <input
-        type="button"
-        name="buscar"
-        id="buscar"
+        type="submit"
+        id="btn-search"
         value="BUSCAR"
         placeholder="Buscar"
       />
     </form>
+
+    <div class="container">
+      <div id="users-filtered" class="filtered">
+        <h2><span id="total-results"></span></h2>
+      </div>
+
+      <div id="users-statistics" class="statistics">
+        <h2>Estatísticas</h2>
+        <h4>Sexo masculino: <span id="gender-male"></span></h4>
+        <h4>Sexo feminino: <span id="gender-female"></span></h4>
+        <h4>Soma das idades: <span id="sum-age"></span></h4>
+        <h4>Média das idades: <span id="average-age"></span></h4>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
   </body>
 </html>
