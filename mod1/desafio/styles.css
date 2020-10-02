@@ -18,6 +18,9 @@ h1 {
   width: 100vw;
   margin: 0 auto;
 }
+.statistics {
+  height: max-content;
+}
 
 .filtered,
 .statistics {
