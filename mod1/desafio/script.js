@@ -68,7 +68,9 @@ function renderUserFiltered(e) {
   filter = allUsers.filter(
     (user) => (user = e !== '' ? user.name.toLowerCase().includes(e) : false)
   );
+
   renderSumary();
+
   usersHTML = `<h2><span id="total-results">${filter.length}</span> Usuário(s) encontrado(s)</h2>`;
   filter.forEach((user) => {
     const { name, age, picture } = user;
