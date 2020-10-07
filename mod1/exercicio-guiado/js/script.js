@@ -60,7 +60,9 @@ function render() {
 function renderCountryList() {
   let countriesHTML = '<div>';
 
-  allCountries.forEach((country) => {
+  allCountries.sort((a,b)=>{
+    return a.name.localeCompare(b.name);
+  }).forEach((country) => {
     const { name, flag, id, population, formattedPopulation } = country;
 
     const countryHTML = `
