@@ -4,12 +4,12 @@ render();
 
 async function render() {
   // await buildFile();
-  console.log(await countCities('mg'));
-  await fiveStateWithBiggerCities();
-  await fiveStateWithlessCities();
-  console.log(await cityWithBiggerNameByState());
-  console.log(await cityWithSmallerNameByState());
-  await cityNameBigger();
+  // console.log(await countCities('mg'));
+  // await fiveStateWithBiggerCities();
+  // await fiveStateWithlessCities();
+  // console.log(await cityWithBiggerNameByState());
+  // console.log(await cityWithSmallerNameByState());
+  // await cityNameBigger();
   await cityNameSmaller();
 }
 
@@ -149,6 +149,14 @@ async function cityNameBigger() {
 async function cityNameSmaller() {
   let res = await cityWithSmallerNameByState();
   res = res
+    .sort((a, b) => {
+      if (a.city > b.city) {
+        return 1;
+      } else if (a.city < b.city) {
+        return -1;
+      }
+      return 0;
+    })
     .sort((a, b) => {
       if (a.city.length > b.city.length) {
         return 1;
