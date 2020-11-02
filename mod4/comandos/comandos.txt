@@ -1,0 +1,51 @@
+db.COLLECTION.insert() - método genérico e retorna a qtd de documentos afetados
+db.COLLECTION.insertOne() - insere um documento e retorna o ObjectId do doc inserido
+db.COLLECTION.insertMany() - insere coleção de documentos e retorna os ObjectId's dos docs inseridos
+db.COLLECTION.updateOne({query}, {$set: {parâmetro}}, {option}) - atualiza a primeira ocorrência da query
+db.COLLECTION.deleteOne({filter}) - deleta a primeira ocorrência do filtro
+db.COLLECTION.deleteMany({filter}) - deleta todos os documentos que atendam ao filtro
+
+db.COLLECTION.bulkWrite([operacao1], [operacao2]) - executa diversas operações em um só comando
+
+.find() = busca no documento baseado na query
+.pretty() = organiza a exibição
+
+db.COLLECTION.getIndexes() - retorna todos os índices da coleção
+db.COLLECTION.createIndex({campo: ordenação}) - cria um índice para um campo
+db.COLLECTION.createIndex({campo: "text"}) - cria um índice do tipo textual para o campo informado
+
+ex: db.COLLETION.createIndex({$text: {$search: "palavras a serem buscadas  "}})
+
+db.COLLECTION.dropIndex("name_-1") exclusão pelo nome do índice
+db.COLLECTION.dropIndex({name: -1}) exclusão pelo campo, precisa da ordenação (1, -1)
+db.COLLECTION.dropIndexes() exclusão de todos os índices, exceto o padrão _id
+
+db.COLLECTION.aggregate([
+{$project: {}}, - quais campos retornar da consulta
+{$match: {campo: "x"}}, - filtro
+{$group: {_id: "$campo", total: {$operacao: "campo"}}}, - ($operação: sum, avg...)
+{$skip: N}, - pulo
+{$limit: N} - limite de resultados
+])
+
+db.COLLECTION.count({query}) ou db.COLLECTION.countDocuments({query}) - retorna a qtd de documentos que atendam à consulta
+db.COLLECTION.distinct("field", {query})
+
+operadores lógicos:
+
+$and: - db.COLLETION.find($and: [{},{}])
+$not: - - db.COLLETION.find($not: [{},{}]) 
+$nor - db.COLLETION.find($nor: [{},{}])
+$or - db.COLLETION.find($or: [{},{}])
+
+
+
+operadores comparação:
+
+$eq - =
+$gt - >
+$lt - <
+$gte - >=
+$lte - <=
+$in - contém
+$nin - n contém

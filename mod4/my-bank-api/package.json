@@ -1,0 +1,15 @@
+{
+  "name": "my-bank-api",
+  "version": "1.0.0",
+  "description": "trabalho prático do módulo 4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sidney Miranda",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "mongoose": "^5.10.11"
+  }
+}
