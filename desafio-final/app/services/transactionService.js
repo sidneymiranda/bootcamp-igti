@@ -40,7 +40,7 @@ async function create(_, res) {
 }
 
 async function find(req, res) {
-  const period = req.params.period;
+  const period = req.params.yearMonth;
 
   try {
     const data = await TransactionModel.find({ yearMonth: period });
